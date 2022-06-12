@@ -10,8 +10,7 @@ namespace FransfordSystem
     {
         public FransforDbContext(DbContextOptions<FransforDbContext> options)
             : base(options) { 
-        
-        
+
         }
         public DbSet<Usuario> Usuario { get; set; }
         public DbSet<Cliente> Cliente { get; set; }
