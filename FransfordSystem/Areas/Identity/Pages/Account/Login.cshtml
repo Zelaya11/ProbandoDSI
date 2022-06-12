@@ -1,0 +1,49 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Iniciar Sesion";
+}
+
+<body class="hold-transition login-page">
+    <div class="hold-transition login-page">
+<div class="login-box">
+     <div class="card card-outline card-primary">
+      <div class="card-header text-center">
+           <a class="h1"><b>Fransford</b>System</a>
+           </div>
+    <div class="card-body">
+        <p class="login-box-msg">Introduzca sus datos para iniciar sesión</p>
+        <section>
+            <form id="account" method="post">
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="input-group mb-3" >
+                    <input asp-for="Input.Email" class="form-control" autocomplete="username" placeholder="Usuario" aria-required="true" />                
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </div>
+                <div class="input-group mb-3">
+                    <input asp-for="Input.Password" class="form-control" autocomplete="current-password" placeholder="Contraseña" aria-required="true" />
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+                <div>
+                    <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-primary">Iniciar Sesión</button>
+                </div>
+                <div>
+                    <p>
+                        <a id="forgot-password" href="/Password/OlvidePass">Olvide Mi Contraseña</a>
+                    </p>
+                </div>
+            </form>
+        </section>
+    </div>
+     </div>
+      </div>
+        </div>
+      </body>
+    
+</>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

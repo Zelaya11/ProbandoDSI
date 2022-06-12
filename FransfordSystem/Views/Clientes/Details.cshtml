@@ -1,0 +1,69 @@
+﻿@model FransfordSystem.Models.Cliente
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalles del cliente</h1>
+
+<div>
+    <h4>Consulta de la información completa del cliente</h4>
+    <hr />
+
+    <table style="width:auto; height:20px" class="table table-condensed table-bordered table-hover">
+        <tr>       
+            <th>
+            @Html.DisplayNameFor(model => model.dui)
+            </th>            
+            <th>
+            @Html.DisplayFor(model => model.dui)
+            </th>
+        </tr>
+        <tr>       
+            <th>
+            @Html.DisplayNameFor(model => model.nombreCliente)
+            </th>          
+            <th>
+            @Html.DisplayFor(model => model.nombreCliente)
+            </th>
+        </tr>
+        <tr>       
+            <th>
+            @Html.DisplayNameFor(model => model.apellidoCliente)
+            </th>             
+            <th>
+            @Html.DisplayFor(model => model.apellidoCliente)
+            </th>
+        </tr>
+        <tr>       
+            <th>
+            @Html.DisplayNameFor(model => model.fechaNacimiento)
+            </th>              
+            <th>
+            @Html.DisplayFor(model => model.fechaNacimiento)
+            </th>
+        </tr>
+        <tr>       
+            <th>
+            @Html.DisplayNameFor(model => model.genero)
+            </th>             
+            <th>
+            @Html.DisplayFor(model => model.genero)
+            </th>
+        </tr>
+        <tr>       
+            <th>
+            @Html.DisplayNameFor(model => model.telefono)
+            </th>      
+            <th>
+            @Html.DisplayFor(model => model.telefono)
+            </th>
+        </tr>       
+  
+    </table>
+
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.IdCliente">Editar</a> |
+    <a asp-action="Index">Regresar a la lista de clientes</a>
+</div>

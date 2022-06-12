@@ -1,0 +1,82 @@
+﻿@model FransfordSystem.ViewModels.EditarViewModel
+@{
+    ViewData["Title"] = "Editar Trabajadores";
+}
+
+
+<h1>Editar Trabajadores</h1>
+      
+<div class="row">
+    <div class="col-md-4">
+        
+        <form action="Edit" method="post">
+            <hr />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-floating">
+                <label > Nombre del Trabajador</label>
+                <input asp-for="nombre" class="form-control" value="@Model.nombre" aria-required="true" />
+            </div>
+            <br>
+            <div class="form-floating">
+                <label > Apellido del Trabajador</label>
+                <input asp-for="apellido" class="form-control" value="@Model.apellido" aria-required="true" />
+                
+            </div>
+            <br>
+            <div class="form-floating">
+                <label > Fecha de Nacimiento</label>
+                <input asp-for="fechaNac" value="@Model.fechaNac" class="form-control"/>
+                <span asp-validation-for="fechaNac" class="text-danger"></span>
+            </div>
+            <br>
+            <div class="form-floating">
+                 <label > Genero </label>
+                 <br>
+                <input asp-for="genero" type="radio" value="M" />&nbsp;&nbsp;&nbsp; Masculino               
+                <br>
+                <input asp-for="genero" type="radio" value="F" />&nbsp;&nbsp;&nbsp; Femenino
+                <span asp-validation-for="genero" class="text-danger"></span>
+            </div>
+            <br>
+            <div class="form-floating">
+                <label > DUI </label>
+                <input asp-for="dui" class="form-control" value="@Model.dui"  aria-required="true" />
+                <span asp-validation-for="dui" class="text-danger"></span>
+            </div>
+            <br>
+            <div class="form-floating">
+                <label > Cuenta Bancaria </label>
+                <input asp-for="cuentaBancaria" class="form-control" value="@Model.cuentaBancaria" aria-required="true" />
+                <span asp-validation-for="cuentaBancaria" class="text-danger"></span>
+            </div>
+            <br>
+            <div class="form-floating">
+                <label > Correo Electronico </label>
+                <input asp-for="correo" class="form-control" value="@Model.correo" aria-required="true" />
+                <span asp-validation-for="correo" class="text-danger"></span>
+            </div>
+
+            <br>
+
+            <div class="form-floating">
+                <input asp-for="nombreUsuario" class="form-control" value="@Model.correo" aria-required="true" type="hidden" />
+            </div>
+            <div class="form-floating">
+                <input asp-for="id" class="form-control" value="@Model.id" type="hidden" aria-required="true" />
+            </div>
+          
+            <br>
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-success" />
+            </div>
+        </form>
+        
+    </div>
+    <div class="col-md-6 col-md-offset-2">     
+    </div>
+</div>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

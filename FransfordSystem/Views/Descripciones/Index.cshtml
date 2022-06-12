@@ -1,0 +1,55 @@
+﻿@model IEnumerable<FransfordSystem.Models.Descripcion>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Descripciones</h1>
+
+<p>
+    <a asp-action="Create">Crear una nueva</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.idExamen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.descripcionExamen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.valorMinimo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.valorMaximo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.idExamen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.descripcionExamen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.valorMinimo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.valorMaximo)
+            </td>
+            <td>
+
+                <a asp-action="Edit" asp-route-id="@item.idDescripcion">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.idDescripcion">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.idDescripcion">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,72 @@
+﻿@model FransfordSystem.Models.Usuario
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<link rel="stylesheet" type="text/css" href="~/css/opciones.css">
+
+<h1>Eliminar usuario</h1>
+
+<h3>¿Realmente desea eliminar este usuario?</h3>
+<div>   
+    <hr />
+
+    <table style="width:auto; height:20px" class="table table-condensed table-bordered table-hover">
+        <tr>       
+            <th>
+            @Html.DisplayNameFor(model => model.dui)
+            </th>            
+            <th id="letranormal">
+            @Html.DisplayFor(model => model.dui)
+            </th>
+        </tr>
+        <tr>       
+            <th>
+            @Html.DisplayNameFor(model => model.nombreTrabajador)
+            </th>          
+            <th>
+            @Html.DisplayFor(model => model.nombreTrabajador)
+            </th>
+        </tr>
+        <tr>       
+            <th>
+            @Html.DisplayNameFor(model => model.apellidoTrabajador)
+            </th>             
+            <th>
+            @Html.DisplayFor(model => model.apellidoTrabajador)
+            </th>
+        </tr>
+        <tr>       
+            <th>
+            @Html.DisplayNameFor(model => model.fechaNacimiento)
+            </th>              
+            <th>
+            @Html.DisplayFor(model => model.fechaNacimiento)
+            </th>
+        </tr>
+        <tr>       
+            <th>
+            @Html.DisplayNameFor(model => model.genero)
+            </th>             
+            <th>
+            @Html.DisplayFor(model => model.genero)
+            </th>
+        </tr>
+        <tr>       
+            <th>
+            @Html.DisplayNameFor(model => model.cuentaBancaria)
+            </th>      
+            <th>
+            @Html.DisplayFor(model => model.cuentaBancaria)
+            </th>
+        </tr>       
+  
+    </table>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        <a asp-action="Index">Regresar a la lista de usuarios</a>
+    </form>
+</div>

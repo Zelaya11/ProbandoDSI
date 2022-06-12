@@ -1,0 +1,84 @@
+﻿@model FransfordSystem.Models.Examen
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<link rel="stylesheet" type="text/css" href="~/css/opciones.css">
+
+<h1>Eliminar examen</h1>
+
+<h3>¿Realmente desea eliminar este registro de examen?</h3>
+<div>
+    <hr />
+    <table style="width:auto; height:20px" class="table table-condensed table-bordered table-hover">
+        <tr>       
+            <th>
+            @Html.DisplayNameFor(model => model.idCategoria)
+            </th>             
+            <th>
+            @Html.DisplayFor(model => model.idCategoria)
+            </th>
+        </tr>  
+        <tr>       
+            <th>
+            @Html.DisplayNameFor(model => model.nombreExamen)
+            </th>            
+            <th id="letranormal">
+            @Html.DisplayFor(model => model.nombreExamen)
+            </th>
+        </tr>
+        <tr>       
+            <th>
+            @Html.DisplayNameFor(model => model.PrecioExamen)
+            </th>          
+            <th>
+            @Html.DisplayFor(model => model.PrecioExamen)
+            </th>
+        </tr> 
+  
+    </table>
+
+    <br/>
+            <h2>Listado de descripciones del examen</h2>
+            <br/>
+            
+   
+        @foreach(Descripcion Descripcion in ViewBag.Descripciones)
+        {   
+
+            <table style="width:auto; height:20px" class="table table-condensed table-bordered table-hover">
+
+            <tr>
+            <th><label>Descripción del examen</label></th>
+            <th>@Descripcion.descripcionExamen</th>
+             </tr>
+
+            <tr>
+            <th><label>Valor mínimo de referencia</label></th>
+            <th>@Descripcion.valorMinimo</th>
+            </tr>
+
+            <tr>
+            <th><label>Valor máximo de referencia</label></th>
+            <th>@Descripcion.valorMaximo</th>
+            </tr>
+            <tr>
+                <th>
+                    <center>
+                        <a asp-controller="Descripciones" asp-action="Delete" asp-route-id="@Descripcion.idDescripcion" class="btn btn-outline-danger btn-sm" type="submit">Eliminar</a>
+                    </center>
+                </th>
+            </tr>
+            
+            
+            </table>
+            
+        }
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="idExamen" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        <a asp-action="Index">Volver a la lista</a> 
+    </form>
+</div>

@@ -1,0 +1,72 @@
+﻿@model FransfordSystem.Models.Cliente
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<link rel="stylesheet" type="text/css" href="~/css/opciones.css">
+
+<h1>Eliminar cliente</h1>
+
+<h3>¿Realmente desea eliminar este cliente?</h3>
+<div>   
+    <hr />
+
+    <table style="width:auto; height:20px" class="table table-condensed table-bordered table-hover">
+        <tr>       
+            <th>
+            @Html.DisplayNameFor(model => model.dui)
+            </th>            
+            <th id="letranormal">
+            @Html.DisplayFor(model => model.dui)
+            </th>
+        </tr>
+        <tr>       
+            <th>
+            @Html.DisplayNameFor(model => model.nombreCliente)
+            </th>          
+            <th>
+            @Html.DisplayFor(model => model.nombreCliente)
+            </th>
+        </tr>
+        <tr>       
+            <th>
+            @Html.DisplayNameFor(model => model.apellidoCliente)
+            </th>             
+            <th>
+            @Html.DisplayFor(model => model.apellidoCliente)
+            </th>
+        </tr>
+        <tr>       
+            <th>
+            @Html.DisplayNameFor(model => model.fechaNacimiento)
+            </th>              
+            <th>
+            @Html.DisplayFor(model => model.fechaNacimiento)
+            </th>
+        </tr>
+        <tr>       
+            <th>
+            @Html.DisplayNameFor(model => model.genero)
+            </th>             
+            <th>
+            @Html.DisplayFor(model => model.genero)
+            </th>
+        </tr>
+        <tr>       
+            <th>
+            @Html.DisplayNameFor(model => model.telefono)
+            </th>      
+            <th>
+            @Html.DisplayFor(model => model.telefono)
+            </th>
+        </tr>       
+  
+    </table>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdCliente" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        <a asp-action="Index">Regresar a la lista de clientes</a>
+    </form>
+</div>

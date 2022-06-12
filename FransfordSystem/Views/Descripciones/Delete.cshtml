@@ -1,0 +1,55 @@
+﻿@model FransfordSystem.Models.Descripcion
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<link rel="stylesheet" type="text/css" href="~/css/opciones.css">
+
+<h1>Eliminar descripciones</h1>
+
+<h3>¿Realmente desea eliminar este registro de descripción del examen?</h3>
+<div>
+    <hr />
+    <table style="width:auto; height:20px" class="table table-condensed table-bordered table-hover">
+        <tr> 
+            <th>
+            @Html.DisplayNameFor(model => model.idExamen)
+            </th>             
+            <th>
+            @Html.DisplayFor(model => model.idExamen)
+            </th>
+        </tr>  
+        <tr>       
+            <th>
+            @Html.DisplayNameFor(model => model.descripcionExamen)
+            </th>            
+            <th id="letranormal">
+            @Html.DisplayFor(model => model.descripcionExamen)
+            </th>
+        </tr>
+        <tr>       
+            <th>
+            @Html.DisplayNameFor(model => model.valorMinimo)
+            </th>          
+            <th>
+            @Html.DisplayFor(model => model.valorMinimo)
+            </th>
+        </tr> 
+        <tr>       
+            <th>
+            @Html.DisplayNameFor(model => model.valorMaximo)
+            </th>          
+            <th>
+            @Html.DisplayFor(model => model.valorMaximo)
+            </th>
+        </tr>
+  
+    </table>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="idDescripcion" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        <a asp-controller="Examenes" asp-action="Index">Volver a la lista de examenes</a>
+    </form>
+</div>

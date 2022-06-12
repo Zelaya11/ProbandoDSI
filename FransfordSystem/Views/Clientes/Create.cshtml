@@ -1,0 +1,63 @@
+﻿@model FransfordSystem.Models.Cliente
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Nuevo cliente</h1>
+
+<h4>Rellenar la siguiente información</h4>
+<!--<B><FONT COLOR="red">[*] Campo obligatorio</FONT>-->
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="dui" class="control-label"></label>
+                <input asp-for="UserName" value="@User.Identity.Name" type="hidden" />
+              
+
+                <input asp-for="dui" class="form-control" placeholder="Ej. 00231183-2"/>
+                <span asp-validation-for="dui" class="text-danger"></span>
+            </div>           
+            <div class="form-group">               
+                <label asp-for="nombreCliente" class="control-label"></label>
+                <input asp-for="nombreCliente" class="form-control" placeholder="Ej. José Alejandro"/>
+                <span asp-validation-for="nombreCliente" class="text-danger"></span>                   
+            </div>
+            <div class="form-group">              
+                <label asp-for="apellidoCliente" class="control-label"></label>
+                <input asp-for="apellidoCliente" class="form-control" placeholder="Ej. Martínez Flores"/>
+                <span asp-validation-for="apellidoCliente" class="text-danger"></span>           
+            </div>
+            <div class="form-group">
+                <label asp-for="fechaNacimiento" class="control-label"></label>
+                <input asp-for="fechaNacimiento" class="form-control" />
+                <span asp-validation-for="fechaNacimiento" class="text-danger"></span>
+            </div>
+            
+             <div class="form-group">
+                <label asp-for="genero" class="control-label"></label>
+                <br />               
+                <input asp-for="genero" type="radio" value="Masculino" />&nbsp;&nbsp;&nbsp; Masculino               
+                <br />
+                <input asp-for="genero" type="radio" value="Femenino" />&nbsp;&nbsp;&nbsp; Femenino
+                <span asp-validation-for="genero" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="telefono" class="control-label"></label>
+                <input asp-for="telefono" class="form-control" placeholder="Ej. 7326-1209"/>
+                <span asp-validation-for="telefono" class="text-danger"></span>
+            </div>         
+            <div class="form-group">
+                <input type="submit" value="Crear" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Regresar a la lista de clientes</a>
+</div>
+
+
