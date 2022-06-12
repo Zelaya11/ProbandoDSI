@@ -29,4 +29,6 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.5" />
   </ItemGroup>
 
+  <ProjectExtensions><VisualStudio><UserProperties wwwroot_4plugins_4bootstrap_4js_4bootstrap_1bundle_1js_1map__JsonSchema="" /></VisualStudio></ProjectExtensions>
+
 </Project>
