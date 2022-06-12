@@ -20,10 +20,6 @@ namespace FransfordSystem
         public DbSet<Unidad> Unidad { get; set; }
 
 
-
-
-
-
     }
 
 
